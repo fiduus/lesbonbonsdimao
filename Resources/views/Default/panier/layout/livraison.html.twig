@@ -1,0 +1,60 @@
+{% extends "::layout/layout1.html.twig" %}        
+{% block stylesheets %}
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">       
+{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="span12" style="background-color: white;padding-left:15px;margin:40px;width:1100px;border-style:ridge;border-color:rosybrown;">
+            <h2 style="color:#891352;font-weight:bold;">Livraison</h2>
+            <div id="collapseOne" class="accordion-body collapse in">
+                <div class="accordion-inner">
+                    <div class="span5">                       
+                        {% if utilisateur.adresses|length != 0 %}
+                        <form action="{{ path('validation') }}" method="POST">
+                            
+                            <h4>Adresse de livraison</h4>
+                            {% for adresse in utilisateur.adresses %}
+                            <label class="radio">
+                                <input type="radio" name="livraison" value="{{ adresse.id }}" {% if loop.index0 == 0 %}checked="checked"{% endif %}>
+                                {{ adresse.adresse }}, {{ adresse.cp }} {{ adresse.ville }} - {{ adresse.pays }} <a href="{{ path('livraisonAdresseSuppression', { 'id' : adresse.id }) }}"><i class="icon-trash"></i></a>
+                                <br />{{ adresse.prenom }} {{ adresse.nom }} 
+                            </label>
+                          
+                            {% endfor %}
+                            
+                            <br /><br />
+                            
+                            <h4>Adresse de facturation</h4>
+                            {% for adresse in utilisateur.adresses %}
+                            <label class="radio">
+                                <input type="radio" name="facturation" value="{{ adresse.id }}" {% if loop.index0 == 0 %}checked="checked"{% endif %}>
+                                {{ adresse.adresse }}, {{ adresse.cp }} {{ adresse.ville }} - {{ adresse.pays }} <a href="{{ path('livraisonAdresseSuppression', { 'id' : adresse.id }) }}"><i class="icon-trash"></i></a>
+                                <br />{{ adresse.prenom }} {{ adresse.nom }} 
+                            </label>   
+                           
+                            {% endfor %}                            
+                            <br />
+                            
+                            <button class="btn btn-primary">Valider mes adresses</button>
+                        </form>
+                        {% endif %}
+                        <a href="{{ path('produits') }}" class="btn btn-info">Retour aux achats</a>
+                    </div>
+
+
+                    <div class="span4 offset1 ">
+                        <h4>Ajouter une nouvelle adresse</h4>
+                        <form action="{{ path('livraison') }}" method="POST">
+                            {{ form_widget(form) }}
+                            <button class="btn btn-primary" type="submit">Ajouter</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+  </div>
+{% endblock %}

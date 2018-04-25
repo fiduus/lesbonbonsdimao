@@ -1,0 +1,34 @@
+adminProduits:
+    pattern:  /
+    defaults: { _controller: "fidiEcommerceBundle:ProduitsAdmin:index" }
+
+adminProduits_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "fidiEcommerceBundle:ProduitsAdmin:show" }
+
+adminProduits_new:
+    pattern:  /new
+    defaults: { _controller: "fidiEcommerceBundle:ProduitsAdmin:new" }
+
+adminProduits_create:
+    pattern:  /create
+    defaults: { _controller: "fidiEcommerceBundle:ProduitsAdmin:create" }
+    methods:  [GET, POST]
+
+adminProduits_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "fidiEcommerceBundle:ProduitsAdmin:edit" }
+
+adminProduits_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "fidiEcommerceBundle:ProduitsAdmin:update" }
+    methods:  [POST, PUT]
+
+adminProduits_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "fidiEcommerceBundle:ProduitsAdmin:delete" }
+    methods:  [POST, DELETE]
+
+adminGridProduit:
+    pattern: /gridProduit
+    defaults: { _controller: fidiEcommerceBundle:ProduitsAdmin:gridProduit }

@@ -1,0 +1,179 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+{% block stylesheets %}
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">       
+{% endblock %}
+       
+{%block body%}              
+          <div class="col-lg-7 ">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h2>Mise à jour d'un produit</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row-fluid">
+                            <fieldset>
+                                <legend></legend>                                
+                                    <div class='form-horizontal'>  
+              
+              <form action="{{ path('adminProduits_update', { 'id' : entity.id }) }}" method="POST" {{ form_enctype(edit_form) }}>
+              {{ form_errors(edit_form) }}
+              <div class="form-group">
+                <div class="col-lg-3">
+                   <label class="control-label">Nom</label>   
+                </div>
+                <div class="col-lg-8" >
+                    {{ form_widget(edit_form.nom, {'attr': {'class': 'form-control'}})  }}    
+                    {{ form_errors(edit_form.nom) }}
+                </div>
+             </div>      
+             <div class="form-group">
+                <div class="col-lg-3">
+                   <label class="control-label">Nom 2ème ligne</label>   
+                </div>
+                <div class="col-lg-8" >
+                    {{ form_widget(edit_form.nom2, {'attr': {'class': 'form-control'}})  }}    
+                    {{ form_errors(edit_form.nom2) }}
+                </div>
+             </div>     
+              
+             <div class="form-group">
+                <div class="col-lg-3">
+                   <label class="control-label">Description</label>   
+                </div>
+                <div class="col-lg-8" >
+                    {{ form_widget(edit_form.description, {'attr': {'class': 'form-control'}})  }}
+                    {{ form_errors(edit_form.description) }}
+                </div>
+             </div>       
+                
+             <div class="form-group">
+                <div class="col-lg-3">
+                   <label class="control-label">Composition</label>   
+                </div>
+                <div class="col-lg-8" >
+                    {{ form_widget(edit_form.composition, {'attr': {'class': 'form-control'}})  }}
+                    {{ form_errors(edit_form.composition) }}
+                </div>
+             </div>     
+                
+             <div class="form-group">
+                <div class="col-lg-3">
+                   <label class="control-label">Vertu</label>   
+                </div>
+                <div class="col-lg-8" >
+                    {{ form_widget(edit_form.vertu, {'attr': {'class': 'form-control'}})  }}
+                    {{ form_errors(edit_form.vertu) }}
+                </div>
+             </div>     
+                
+             <div class="form-group">
+                <div class="col-lg-3">
+                   <label class="control-label">Valeurs nutritives</label>   
+                </div>
+                <div class="col-lg-8" >
+                    {{ form_widget(edit_form.valnut, {'attr': {'class': 'form-control'}})  }}
+                    {{ form_errors(edit_form.valnut) }}
+                </div>
+             </div>     
+             <div class="form-group">
+                <div class="col-lg-3">
+                   <label class="control-label">Poids</label>   
+                </div>
+                <div class="col-lg-8">
+                    {{ form_widget(edit_form.poids, {'attr': {'class': 'form-control'}})  }}
+                    {{ form_errors(edit_form.poids) }}
+                </div>
+             </div>
+             
+              <div class="form-group">
+                <div class="col-lg-3">
+                   <label class="control-label">Image</label>   
+                </div>
+                <div class="col-lg-5 offset1 ">
+                    {{ form_widget(edit_form.image)  }}   
+                    {{ form_errors(edit_form.image) }}
+                </div>
+             </div>   
+                
+             <div class="form-group">
+                <div class="col-lg-3">
+                   <label class="control-label">Image description</label>   
+                </div>
+                <div class="col-lg-5 offset1 ">
+                    {{ form_widget(edit_form.imageDescription)  }}   
+                    {{ form_errors(edit_form.imageDescription) }}
+                </div>
+             </div>   
+             <div class="form-group">
+                <div class="col-lg-3">
+                   <label class="control-label">Catégorie</label>   
+                </div>
+                <div class="col-lg-8">
+                    {{ form_widget(edit_form.categorie, {'attr': {'class': 'form-control'}})  }}
+                </div>
+             </div>
+                
+            <div class="form-group">
+                <div class="col-lg-3">
+                   <label class="control-label">Prix</label>   
+                </div>
+                <div class="col-lg-8">
+                    {{ form_widget(edit_form.prix, {'attr': {'class': 'form-control'}})  }}
+                    {{ form_errors(edit_form.prix) }}
+                </div>
+             </div>
+             <div class="form-group">
+                <div class="col-lg-3">
+                   <label class="control-label">Stock</label>   
+                </div>
+                <div class="col-lg-8">
+                    {{ form_widget(edit_form.stock, {'attr': {'class': 'form-control'}})  }}
+                    {{ form_errors(edit_form.stock) }}
+                </div>
+             </div>
+             <div class="form-group">
+                <div class="col-lg-3">
+                   <label class="control-label">TVA</label>   
+                </div>
+                <div class="col-lg-8">
+                    {{ form_widget(edit_form.tva, {'attr': {'class': 'form-control'}})  }}
+                    {{ form_errors(edit_form.tva) }}
+                </div>
+             </div>
+            
+             <div class="form-group">
+                 <div class="col-lg-3">                     
+                </div>
+                <div class="col-lg-8">
+                   <div class="btn-group" role="group" aria-label="Basic example">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                         <button type="submit" value="{{'form.submit|trans'}}" class="btn btn-primary">Mettre à jour</button>                     
+                        {{form_end(edit_form)}}
+                    </div>
+                        <a type="button" class="btn btn-success" href="{{ path('adminProduits') }}">
+                             Retour à la liste
+                        </a> 
+                           <div class="btn-group" role="group" aria-label="Basic example">                        
+                        {{ form_start(delete_form) }}
+                        <button class="btn btn-danger" data-toggle="confirmation" data-title="Vous confirmez la suppression?">
+                            Supprimer
+                        </button>                
+                       {{ form_end(delete_form) }}            
+                          </div>
+                 </div>
+             </div> 
+            </div>
+            </form>           
+           </div>  
+          </fieldset>
+            </div> 
+    </div> 
+</div> 
+</div> 
+
+
+ {%endblock%}
+{% block javascripts %}
+        <script src="{{ asset('../js/bootstrap-confirmation.js') }}"></script>
+{% endblock %}

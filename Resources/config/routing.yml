@@ -1,0 +1,44 @@
+routingPanier:
+  resource: "@fidiEcommerceBundle/Resources/config/routing/routingPanier.yml"
+  prefix: /panier
+
+routingProduits:
+  resource: "@fidiEcommerceBundle/Resources/config/routing/routingProduits.yml"
+  prefix: /
+  
+routingPaiement:
+  resource: "@fidiEcommerceBundle/Resources/config/routing/routingPaiement.yml"
+  prefix: /paiement
+
+
+routingProduitsAdmin:
+  resource: "@fidiEcommerceBundle/Resources/config/routing/routingProduitsAdmin.yml"
+  prefix: /admin/produits
+  
+routingCategoriesAdmin:
+  resource: "@fidiEcommerceBundle/Resources/config/routing/routingCategoriesAdmin.yml"
+  prefix:   /admin/categories
+
+routingCommandesAdmin:
+  resource: "@fidiEcommerceBundle/Resources/config/routing/routingCommandesAdmin.yml"
+  prefix: /admin/commandes
+  
+routingEvenementsAdmin:
+  resource: "@fidiEcommerceBundle/Resources/config/routing/routingEvenementsAdmin.yml"
+  prefix: /admin/evenements
+  
+routingPromoAdmin:
+  resource: "@fidiEcommerceBundle/Resources/config/routing/routingPromoAdmin.yml"
+  prefix: /admin/promo
+
+routingCommandes:
+  resource: "@fidiEcommerceBundle/Resources/config/routing/routingCommandes.yml"
+  prefix: /
+  
+routingFront:
+  resource: "@fidiEcommerceBundle/Resources/config/routing/routingFront.yml"
+  prefix: /
+  ## YAML Template.
+
+
+  

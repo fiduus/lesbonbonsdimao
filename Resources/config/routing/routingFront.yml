@@ -1,0 +1,23 @@
+front_detail:
+    pattern:  /
+    defaults: { _controller: fidiEcommerceBundle:Front:evenement }
+    
+front_cat:
+    pattern:  /
+    defaults: { _controller: fidiEcommerceBundle:Front:categorie }
+   
+demande_desabonnement:
+    pattern: /desabonnement/{id}
+    defaults: { _controller: fidiUserBundle:UserAdmin:desabonnement }
+    
+cgv:
+    pattern: /cgv
+    defaults: { _controller: fidiEcommerceBundle:Front:cgv }
+    
+cookie:
+    pattern: /cookie
+    defaults: { _controller: fidiEcommerceBundle:Front:cookie }
+    
+ml:
+    pattern: /ml
+    defaults: { _controller: fidiEcommerceBundle:Front:ml }

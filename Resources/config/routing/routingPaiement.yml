@@ -1,0 +1,33 @@
+lexik_paybox_ipn:
+    path:     /payment-ipn/{time}
+    defaults: { _controller: LexikPayboxBundle:Default:ipn }
+    methods:  [GET, POST]
+
+lexik_paybox:
+    path:     /payment-ipn
+    defaults: { _controller: LexikPayboxBundle:Sample:index }
+    methods:  [GET, POST]
+    
+lexik_paybox_sample_return:
+    path:     /payment-ipn/return
+    defaults: { _controller: LexikPayboxBundle:Sample:return }
+    methods:  [GET, POST]
+paiement:
+    path:     /index
+    defaults: { _controller: fidiEcommerceBundle:Paiement:index }
+    methods:  [GET, POST]
+
+paiement_accepte:
+    path:     /accepte
+    defaults: { _controller: fidiEcommerceBundle:Paiement:accepte }
+    methods:  [GET, POST]
+    
+paiement_annule:
+    path:     /annule
+    defaults: { _controller: fidiEcommerceBundle:Paiement:annule }
+    methods:  [GET, POST]
+    
+paiement_refuse:
+    path:     /refuse
+    defaults: { _controller: fidiEcommerceBundle:Paiement:refuse }
+    methods:  [GET, POST]

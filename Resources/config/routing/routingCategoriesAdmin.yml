@@ -1,0 +1,30 @@
+adminCategories:
+    pattern:  /
+    defaults: { _controller: "fidiEcommerceBundle:CategoriesAdmin:index" }
+
+adminCategories_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "fidiEcommerceBundle:CategoriesAdmin:show" }
+
+adminCategories_new:
+    pattern:  /new
+    defaults: { _controller: "fidiEcommerceBundle:CategoriesAdmin:new" }
+
+adminCategories_create:
+    pattern:  /create
+    defaults: { _controller: "fidiEcommerceBundle:CategoriesAdmin:create" }
+    requirements: { _method: post }
+
+adminCategories_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "fidiEcommerceBundle:CategoriesAdmin:edit" }
+
+adminCategories_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "fidiEcommerceBundle:CategoriesAdmin:update" }
+    requirements: { _method: post|put }
+
+adminCategories_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "fidiEcommerceBundle:CategoriesAdmin:delete" }
+    requirements: { _method: post|delete }

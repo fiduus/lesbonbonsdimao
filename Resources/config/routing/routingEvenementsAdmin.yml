@@ -1,0 +1,30 @@
+adminEvenements:
+    pattern:  /
+    defaults: { _controller: fidiEcommerceBundle:EvenementsAdmin:index }
+
+adminEvenements_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "fidiEcommerceBundle:EvenementsAdmin:show" }
+
+adminEvenements_new:
+    pattern:  /new
+    defaults: { _controller: "fidiEcommerceBundle:EvenementsAdmin:new" }
+
+adminEvenements_create:
+    pattern:  /create
+    defaults: { _controller: "fidiEcommerceBundle:EvenementsAdmin:create" }
+    requirements: { _method: post }
+
+adminEvenements_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "fidiEcommerceBundle:EvenementsAdmin:edit" }
+
+adminEvenements_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "fidiEcommerceBundle:EvenementsAdmin:update" }
+    requirements: { _method: post|put }
+
+adminEvenements_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "fidiEcommerceBundle:EvenementsAdmin:delete" }
+    requirements: { _method: post|delete }

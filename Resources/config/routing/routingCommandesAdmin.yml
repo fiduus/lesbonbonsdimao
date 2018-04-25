@@ -1,0 +1,28 @@
+adminCommande:
+    pattern:  /
+    defaults: { _controller: fidiEcommerceBundle:CommandesAdmin:commandes }
+    
+adminShowFacture:
+    pattern:  /facture/{id}
+    defaults: { _controller: fidiEcommerceBundle:CommandesAdmin:showFacture }
+
+adminGridCommande:
+    pattern: /gridCommande
+    defaults: { _controller: fidiEcommerceBundle:CommandesAdmin:gridCommande }
+    
+commande_hier:
+    pattern: /commandeHier
+    defaults: {_controller: fidiEcommerceBundle:CommandesAdmin:commandeHier }
+    
+adminValiderCommande:
+    pattern: /valider_commande/{id}
+    defaults: {_controller: fidiEcommerceBundle:CommandesAdmin:validerCommande }
+    
+adminSupprimerCommande:    
+    pattern: /{id}/supprimer_commande
+    defaults: {_controller: fidiEcommerceBundle:CommandesAdmin:supprimerCommande }
+    methods:  [POST, DELETE]
+    
+adminEditerCommande:
+    pattern: /editer_commande/{id}
+    defaults: {_controller: fidiEcommerceBundle:CommandesAdmin:update }

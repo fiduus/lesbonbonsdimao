@@ -1,0 +1,103 @@
+
+{% extends "::layout/layout1.html.twig" %}
+{%block stylesheets%}
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<link rel="stylesheet" href="{{ asset('css/footer-distributed-with-address-and-phones.css') }}" type="text/css">
+{% endblock %}
+{% block body %}
+<div class="container"> <!-- style="background-image: url(../img/plancher.jpg);">-->
+    <div class="row">       
+        <div class="span3">
+            {% include '::modulesUsed/navigation.html.twig' %}
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                {% include 'fidiUserBundle:Default:modulesUsed/utilisateursConnecte.html.twig' %}   
+            {% else %}
+                {% include 'fidiUserBundle:Default:modulesUsed/utilisateurs.html.twig' %}   
+            {% endif %}
+            {% render(controller('fidiEcommerceBundle:Panier:menu')) %}
+        </div>        
+        
+        <div class="span9">            
+            <div class="well" style="text-align: justify;">
+                <h2>Conditions générales de vente</h2>
+                <strong> ARTICLE 1 : CHAMP D’APPLICATION</strong><br>
+Les présentes conditions générales de vente (ci-après « CGV ») s'appliquent à toutes commandes électroniques ou téléphoniques passées par des particuliers agissant, à titre personnel, en qualité de consommateurs auprès de la société LES BONBONS D’IMAO soit directement sur son site Internet accessible à l’adresse suivante : wwwlesbonbonsdimao.com, soit par téléphone au 06 41 57 74 67.
+Les présentes CGV sont susceptibles d’être modifiées à tout moment par Les Bonbons d’IMAO. Il vous appartient de les consulter et de les accepter formellement avant toute commande.
+Les CGV applicables sont celles figurant sur le Site au jour de votre commande et jointes à votre email de confirmation de commande.
+Toute commande passée auprès du Site suppose l’acceptation entière, sans réserve et sans  condition des CGV en vigueur au jour de ladite commande
+<br><br>
+<strong>ARTICLE 2 :   INFORMATION SUR LES PRIX</strong><br>
+Les offres de produits sont valables tant qu'elles sont visibles sur le Site. 
+
+Les prix des produits indiqués sur les fiches produits du Site  sont hors frais de livraison. Le montant des frais de livraison applicables pour les produits commandés sur le Site figurent sur votre bon de commande.
+<br><br>
+<strong>ARTICLE 3 : COMMANDES</strong><br>
+Il est possible de passer commande auprès de Les Bonbons d’IMAO:
+- En ligne sur le Site ;
+- Par télé​phone en appelant au 06 41 57 74 67 du lundi au vendredi de 9H à 19 H et le samedi et jours fériés de 9H à 18H ;
+Aucune commande adressée à Les Bonbons d’IMAO par courrier ne pourra être prise en compte.
+Suite à la passation de votre commande, Les Bonbons d’IMAO  en accusera réception en vous adressant  un email de Confirmation de Commande comprenant le récapitulatif de votre commande,   puis validera définitivement votre commande.
+
+Les Bonbons d’IMAO se réserve le droit de ne pas valider votre commande pour tout motif légitime, notamment dans l’hypothèse où :
+elle ne serait pas conforme aux présentes CGV;
+l’une de vos précédentes commandes  n’aurait pas été intégralement payée à échéance;
+un litige relatif au paiement d’une de vos précédentes commandes serait en cours de traitement;
+plusieurs éléments graves et concordants feraient peser un soupçon de fraude sur votre commande.
+
+Ces emails sont envoyés à l’adresse email que vous utilisez pour vous identifier dans votre Espace Client
+A noter : Si vous ne recevez pas l’un des deux emails ci-dessus, nous vous recommandons de prendre contact avec notre Service Clients.
+
+<br><br>
+<strong>ARTICLE 4 : MODALITES DE PAIEMENT</strong><br>
+Attention, seules les cartes bancaires rattachées à un établissement bancaire situé en France sont acceptées.
+<br><br>
+<strong>ARTICLE 5 : SECURISATION DES PAIEMENTS</strong><br>
+
+Les paiements en ligne sur le Site ou par téléphone auprès de Les Bonbons d’IMAO sont réalisés via une plateforme de paiement sécurisée, complétée par des mesures de contrôle, spécifiques à chaque moyen de paiement, afin de garantir la sécurité des achats effectués sur le Site et de lutter contre la fraude.
+Les coordonnées de votre Carte de Paiement communiquées lors de votre commande ne transitent jamais en clair sur le réseau.
+<br><br>
+<strong>ARTICLE 6 : EXPEDITION ET LIVRAISON</strong><br>
+
+Le montant total de vos frais de livraison vous est indiqué lors de la passation de votre commande.<br><br>
+<strong>ARTICLE 7 : RECEPTION DES PRODUITS PAR LE CLIENT</strong><br>
+
+Lors de la réception de votre colis, si vous constatez que certains produits sont manquants dans votre colis, veuillez prendre contact au plus vite avec le Service Clients .
+Lors de la réception des produits commandés, si vous constatez que ceux-ci sont abîmés, nous vous recommandons, de prendre contact avec le Service Clients de Les Bonbons d’IMAO  dans les meilleurs délais.
+<br><br>
+<strong>ARTICLE 8 : RETRACTATION</strong><br>
+Conformément aux dispositions des articles L. 221-18 et suivants du Code de la Consommation, vous disposez d'un délai de quatorze jours ouvrés courant à compter du lendemain de la réception du dernier produit de votre commande pour exercer votre droit de rétractation sans avoir à justifier de motifs ni à payer de pénalités, à l'exception des frais de retour qui restent à votre charge.
+ Le transport des produits ainsi retournés est de votre responsabilité ; tout dommage subi par les produits à cette occasion étant de nature, comme rappelé ci-après, à faire échec à l’exercice de votre droit de rétractation.
+<br><br>
+<strong>ARTICLE 9 : FORCE MAJEURE</strong><br>
+Les Bonbons d’IMAO ne  sauraient être tenus pour responsable de l'inexécution d’une de ses obligations issues du contrat de vente dès lors que cette inexécution est liée à la survenance d'un événement de force majeure.
+<br><br>
+<strong>ARTICLE 10 : DONNEES PERSONNELLES</strong><br>
+Les Bonbons d’IMAO est le responsable du traitement de vos données personnelles.
+
+De façon générale, les informations que vous nous communiquez, à l’exception de votre mot de passe qui est crypté et ne peut jamais être lu, sont destinées au personnel habilité de Les Bonbons d’IMAO qui est le responsable de traitement, vos données sont utilisées afin de gérer vos accès à votre compte client, et aussi pour le traitement et le suivi de vos commandes.
+Les données personnelles recueillies par Les Bonbons d’IMAO T dans le cadre de la création de votre compte client et de la passation de commande de produits sont conservées pour le temps nécessaire à la gestion de vos commandes et des droits qui y sont associés.
+Certaines de vos données personnelles seront également conservées par Les Bonbons d’IMAO dans les délais qui lui sont imposées par la législation afin de répondre à ses obligations légales.
+
+ <br><br>
+<strong>ARTICLE 11 : COORDONNEES DE LA SOCIETE - MENTIONS LEGALES</strong><br>
+Pour toute information ou conseil, vous pouvez nous contacter du lundi au vendredi de 9h à 19h et le week-end et les jours fériés de 9h à 18h au 06 41 57 74 67.
+Attention : Afin d'optimiser le traitement de votre appel, pensez à préparer l’email avec lequel vous avez passé votre commande et le numéro de la commande concernée.
+<br><br>
+Par courrier : Les Bonbons d’IMAO
+           La Pelouinais
+               44110   ERBRAY
+Attention : Afin d'optimiser le traitement de vos demandes, pensez à d'indiquer dans votre courrier votre nom, prénom, email avec lequel vous avez passé votre commande et le numéro de la commande concernée.
+<br><br>
+Les Bonbons d’IMAO
+Micro entreprise Immatriculée au registre des métiers sous le numéro 
+SIRET : 414 545 038 00021
+Représentée par M. Goenael KHELIF, en qualité de Gérant.
+        </div> 
+       </div> 
+    </div>   
+ </div>
+{% endblock %}				
+                            
+
+
+

@@ -1,0 +1,40 @@
+
+services:
+    setNewFacture:
+        class: fidi\EcommerceBundle\Services\GetFacture
+        arguments: ["@service_container"]
+    setNewlegal:
+        class: fidi\EcommerceBundle\Services\GetLegal
+        arguments: ["@service_container"]
+    setNewReference:
+      class: fidi\EcommerceBundle\Services\GetReference
+      arguments: ["@security.context", "@doctrine.orm.entity_manager"]
+    
+    tva:
+      class: fidi\EcommerceBundle\Twig\Extension\TvaExtension
+      tags:
+        - { name: twig.extension }
+
+    montantTva:
+      class: fidi\EcommerceBundle\Twig\Extension\MontantTvaExtension
+      tags:
+        - { name: twig.extension }
+
+    redirectionListener:
+      class: fidi\EcommerceBundle\Listener\RedirectionListener
+      arguments: ["@service_container","@session"]
+      tags:
+        - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+        
+    lexik_paybox.sample_response_listener:
+        class: %lexik_paybox.response_handler.class%
+        arguments: [ %kernel.root_dir%, @filesystem ]
+        tags:
+            - { name: kernel.event_listener, event: paybox.ipn_response, method: onPayboxIpnResponse }
+
+
+
+
+   
+    
+#    ecommerce.example.class: fidi\EcommerceBundle\Example

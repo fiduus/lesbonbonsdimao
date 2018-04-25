@@ -1,0 +1,15 @@
+produits:
+    pattern:  /produit
+    defaults: { _controller: fidiEcommerceBundle:Produits:produits }
+
+presentation:
+    pattern:  /produit/{id}
+    defaults: { _controller: fidiEcommerceBundle:Produits:presentation }
+
+categorieProduits:
+    pattern:  /categorie/{categorie}
+    defaults: { _controller: fidiEcommerceBundle:Produits:produits }
+
+rechercheProduits:
+    pattern:  /recherche
+    defaults: { _controller: fidiEcommerceBundle:Produits:rechercheTraitement }

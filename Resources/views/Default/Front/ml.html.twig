@@ -1,0 +1,148 @@
+
+{% extends "::layout/layout1.html.twig" %}
+{%block stylesheets%}
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<link rel="stylesheet" href="{{ asset('css/footer-distributed-with-address-and-phones.css') }}" type="text/css">
+{% endblock %}
+{% block body %}
+<div class="container"> <!-- style="background-image: url(../img/plancher.jpg);">-->
+    <div class="row">       
+        <div class="span3">
+            {% include '::modulesUsed/navigation.html.twig' %}
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                {% include 'fidiUserBundle:Default:modulesUsed/utilisateursConnecte.html.twig' %}   
+            {% else %}
+                {% include 'fidiUserBundle:Default:modulesUsed/utilisateurs.html.twig' %}   
+            {% endif %}
+            {% render(controller('fidiEcommerceBundle:Panier:menu')) %}
+        </div>        
+        
+        <div class="span9">            
+            <div class="well" style="text-align: justify;">
+                <h2>MENTIONS LEGALES</h2>
+                
+<br><br><strong>I. INFORMATIONS LEGALES</strong><br>
+- Le présent site est édité par : FID2I représenté par Rakotondrainibe Fidiniaina, Auto-entrepreneur, dont le siège social est situé au 79Ter, route Antide Boyer, 97417 La
+Montagne Saint-Denis de La Réunion, numéro SIRET :483 660 932 000 29<br>
+- Le directeur de la publication du site internet est Monsieur Goenael Khélif en sa qualité
+de Gérant ;<br>
+- L’hébergeur du site est Hostpapa. Le stockage est assuré par le même hébérgeur dont le siège se trouve au
+115 George Street Suite 511 ,Oakville, ON, L6J 0A2 Canada<br>
+- Pour toute information ou conseil, vous pouvez nous contacter au 06 41 57 74 67 (prix de l’appel) du lundi au vendredi de 8H à 18H.
+- Vous pouvez nous signaler tout contenu inadapté ou illégal à l’adresse suivante :<br>
+lesbonbonsdimao@gmail.com . Attention, il ne sera répondu à aucune question posée à
+cette adresse relative aux produits et services proposés à la vente sur le site, au suivi du
+traitement de votre commande ou aux demandes relatives au SAV de vos produits.
+<br><br><strong>II. CONDITIONS D’UTILISATION DU SITE</strong><br>
+- L’utilisateur reconnaît avoir pris connaissance des présentes et s’engage à les respecter.<br>
+- L’utilisateur reconnaît disposer de la compétence et des moyens nécessaires pour accéder et
+utiliser ce site.<br>
+- L’utilisateur reconnaît avoir vérifié que la configuration informatique utilisée ne contient
+aucun virus et qu’elle est en parfait état de fonctionnement.<br>
+- Les Bonbons d'Imao met tout en œuvre pour offrir aux utilisateurs des informations ou des outils
+disponibles et vérifiés mais ne saurait être tenu pour responsable des erreurs, d’une absence
+de disponibilité des fonctionnalités ou de la présence de virus sur son site.<br>
+- Les Bonbons d'Imao se réserve le droit de supprimer, changer ou modifier ce site en tout temps et sans
+préavis.<br>
+- Les Bonbons d'Imao ne peut être tenue responsable d'aucun préjudice, notamment de préjudices
+résultant de la transmission de documents sur Internet.<br>
+- Les Bonbons d'Imao se réserve le droit de réviser, supprimer, modifier, valider ou changer,
+intégralement ou en partie, tout contenu envoyé au site internet ou affiché sur celui-ci. <br>
+<br><br><strong>III. INFORMATIQUE ET LIBERTES</strong><br>
+- En application de la loi n°78-17 du 6 janvier 1978 modifiée, relative à l’informatique, aux
+fichiers et aux libertés, le site web a fait l’objet d’une déclaration auprès de la Commission
+Nationale de l’Informatique et des libertés (www.cnil.fr).<br>
+- L’utilisateur est notamment informé, conformément à l’article 32 de la loi Informatique et
+libertés du 6 janvier 1978 modifiée, que Les Bonbons d'Imao, en tant que responsable du traitement,
+met en œuvre un traitement de données à caractère personnel ayant pour principales
+finalités la gestion de l’inscription de l’utilisateur au site communautaire, l’envoi de
+newsletters.<br>
+- Certaines des données collectées pourront être communiquées à ses partenaires à des fins
+de prospection.<br>
+- Les champs identifiés par un astérisque sont obligatoires. En l’absence de réponse ou si les
+informations fournies sont erronées, Les Bonbons d'Imao ne pourra pas traiter votre demande.
+- L’utilisateur est informé qu’il dispose d’un droit d’accès, d’interrogation, et de rectification
+qui lui permet, le cas échéant, de faire rectifier, compléter, mettre à jour, verrouiller ou
+effacer les données personnelles le concernant qui sont inexactes, incomplètes, équivoques,
+périmées ou dont la collecte, l’utilisation, la communication ou la conservation est interdite.<br>
+- L’utilisateur dispose également d’un droit d’opposition au traitement de ses données pour
+des motifs légitimes ainsi qu’un droit d’opposition à ce que ces données soient utilisées à des
+fins de prospection commerciale.<br>
+- L’ensemble de ces droits s’exerce auprès de Les Bonbons d'Imao par courrier postal accompagné d’une
+copie d’un titre d’identité comportant une signature à l’adresse suivante :
+Les Bonbons d'Imao
+La Pélouinais
+44110 Erbray, France
+<br><br><strong>IV. COOKIES ET TEMOINS DE CONNEXION</strong><br>
+- Lorsqu’une personne visite le site www.lesbonbonsdimao.com, Les Bonbons d'Imao installe des cookies ou
+témoins de connexion sur le disque dur de l’ordinateur de l’internaute.<br>
+- Les cookies sont des données utilisées par un serveur web pour envoyer des informations
+d’état au navigateur d’un utilisateur, et pour ce navigateur de renvoyer des informations
+d’état au serveur web d’origine.<br>
+- Les informations d’état peuvent être par exemple un identifiant de session, une langue, une
+date d’expiration, un domaine de réponse, etc. <br>
+- Ces informations d’état peuvent être stockées par le navigateur de diverses manières (un
+fichier texte distinct par cookie, un fichier unique contenant l’ensemble des cookies,
+possibilité de cryptage de ce fichier unique, etc.) ou ne pas être stockées du tout : cela
+dépend du type de navigateur, de sa version, de sa configuration, etc.<br>
+- Certains de ces cookies ont pour finalité exclusive de permettre ou faciliter la
+communication par voie électronique. D’autres sont strictement nécessaires à la fourniture
+d'un service de communication en ligne.<br>
+- En tout état de cause, le paramétrage du logiciel de navigation permet d’informer de la
+présence de cookies et éventuellement de la refuser.<br>
+- La plupart des navigateurs sont paramétrés par défaut et acceptent l’installation de Cookies.
+Cependant, vous avez la possibilité, si vous le souhaitez, de désactiver l’utilisation de cookies
+en sélectionnant les paramètres appropriés de votre navigateur. En fonction des navigateurs
+utilisés la procédure peut être différente.<br>
+- Généralement, ce paramètre se retrouve dans les onglets « Outils », « Paramètres ».
+- Il n’est pas possible d’assurer une information détaillée et à jour de ces éléments de
+paramétrage qui sont sous le seul contrôle exclusif et l’autorité des éditeurs des logiciels de
+navigation.<br>
+- A titre de renseignements, les utilisateurs peuvent disposer d’informations complémentaires
+, de la part des éditeurs de leur logiciel de navigation sur leur site internet et de manière
+plus générale sur le site de la Cnil à l’adresse www.cnil.fr en utilisant le mot clé « cookies »
+dans les moteurs de recherche.<br>
+- Avec internet explorer vous devez passer par « outils », cliquez sur options internet, puis sur
+l’onglet confidentialité et choisir paramètre de confidentialité « avancé ». Pour interdire les
+cookies, vous devez cocher « ignorer » la gestion automatique des cookies puis sélectionner
+« refuser », si vous voulez choisir au cas par cas d’accepter ou de refuser, il convient de
+sélectionner l’option « demander ».<br>
+- Votre attention est attirée sur le fait qu’en paramétrant votre navigateur pour refuser tous
+les cookies et autre témoins de connexion nécessaires à, certaines fonctionnalités, pages,
+espaces du site ne seront pas accessibles.
+<br><br><strong>V. HYPERLIENS</strong><br>
+- Les liens hypertextes mis en place dans le cadre du site web en direction d’autres ressources
+présentes sur le réseau Internet, et notamment vers ses partenaires, ont fait l’objet d’une
+autorisation préalable, écrite et expresse.<br>
+- Les Bonbons d'Imao ne saurait être responsable de l’accès par les utilisateurs par les liens hypertextes
+mis en place dans le cadre du site internet en direction d’autres ressources présentes sur le
+réseau. <br>
+- Les Bonbons d'Imao décline toute responsabilité quant au contenu des informations fournies sur ces
+ressources présentes sur le réseau au titre de l’activation des liens hypertextes.<br>
+- L’utilisateur ne peut pas mettre en place un lien hypertexte en direction de ce site sans
+l’autorisation expresse et préalable de Les Bonbons d'Imao.<br>
+- En aucun cas, cette autorisation ne pourra être qualifiée de convention implicite d’affiliation.<br>
+- En toute hypothèse, les liens hypertextes renvoyant au site web devront être retirés à
+première demande de Les Bonbons d'Imao.
+<br><br><strong>VI. PROTECTION DU CONTENU</strong><br>
+- L’intégralité du contenu présent ou rendu disponible à travers le site www.lesbonbonsdimao.com,
+tels que, les textes, les dessins, les graphiques, les images, la musique, les photos, les
+marques et logos, les téléchargements numériques, etc ; est la propriété de la société
+Les Bonbons d'Imao, de ses affiliées, ou de tiers.<br>
+- Ce contenu est protégé par des droits de propriété intellectuelle. Nous attirons votre
+attention sur le fait que la violation des droits de propriété intellectuelle est constitutive du
+délit de contrefaçon et sanctionnée pénalement.<br>
+- Les Bonbons d'Imao ne concède aucun droit sur le contenu et n'autorise ses visiteurs à copier et à
+imprimer sur support papier un contenu de son site, que dans le seul but de préparer leurs
+achats.<br>
+- Il est formellement interdit à toute personne physique ou morale d’extraire, de copier,
+reproduire, de modifier, de retranscrire et/ou de réutiliser, tout ou partie du contenu, pour
+tout autre usage que la préparation d’achats sur le site www.lesbonbonsdimao.com, sans
+l’autorisation expresse et par écrit du titulaire des droits.
+<br><br><strong>VII. LOI APPLICABLE</strong><br>
+- La loi française est applicable tant pour les règles de forme que de fond.<br>
+        </div> 
+       </div> 
+    </div>   
+ </div>
+{% endblock %}		

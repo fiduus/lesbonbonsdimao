@@ -1,0 +1,158 @@
+
+{% extends "::layout/layout1.html.twig" %}
+{%block stylesheets%}
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<link rel="stylesheet" href="{{ asset('css/footer-distributed-with-address-and-phones.css') }}" type="text/css">
+{% endblock %}
+{% block body %}
+<div class="container"> <!-- style="background-image: url(../img/plancher.jpg);">-->
+    <div class="row">       
+        <div class="span3">
+            {% include '::modulesUsed/navigation.html.twig' %}
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                {% include 'fidiUserBundle:Default:modulesUsed/utilisateursConnecte.html.twig' %}   
+            {% else %}
+                {% include 'fidiUserBundle:Default:modulesUsed/utilisateurs.html.twig' %}   
+            {% endif %}
+            {% render(controller('fidiEcommerceBundle:Panier:menu')) %}
+        </div>        
+        
+        <div class="span9">            
+            <div class="well" style="text-align: justify;">
+                <h2>Protection de la vie privée et cookies</h2>
+                <strong>Qu’est-ce qu’un cookie ? </strong><br>
+A l’occasion de la consultation d’un site internet, un éditeur de site internet, tel que Les Bonbons d'Imao, peut être amené, sous réserve de vos choix, à déposer sur votre terminal (ordinateur, smartphone, tablette), grâce à votre navigateur,  un fichier texte. 
+
+Ce fichier texte est un cookie. Il va permettre à Les Bonbons d'Imao, pendant la durée de validité ou d’enregistrement du cookie, d’identifier votre terminal lors de vos prochaines visites.  
+
+Seul l’émetteur d'un cookie est susceptible de lire ou de modifier les informations contenues dans ce  cookie.
+
+Vous trouverez ci-dessous les informations relatives aux cookies susceptibles d’être déposés sur votre terminal lorsque vous visitez des pages du site www.lesbonbonsdimao.com, soit par Les Bonbons d'Imao, soit par des tiers, ainsi que les moyens vous permettant de supprimer/refuser l’inscription de ces cookies sur votre terminal.
+
+
+<br><br><strong>A quoi servent les cookies émis sur www.lesbonbonsdimao.com ?</strong><br>
+Il existe plusieurs catégories de cookies, certains sont émis directement par Les Bonbons d'Imao et ses prestataires, d’autres peuvent être émis par des sociétés tierces.
+
+
+
+    <br><br><strong>I.     Les cookies émis par Les Bonbons d'Imao et ses prestataires</strong><br>
+Différents cookies peuvent être déposés sur votre terminal lors de votre navigation sur notre site internet :
+
+            <br><br><strong>1.     Les cookies « Essentiels » </strong><br>
+Ces cookies sont indispensables à la navigation sur notre site, notamment à la bonne exécution du processus de commande. 
+
+Leur surpression peut entrainer des difficultés de navigation sur notre site ainsi que l’impossibilité de passer commande.
+
+Ces cookies sont également nécessaires au suivi de l’activité de Les Bonbons d'Imao.
+
+Ces cookies peuvent être installés sur votre terminal par Les Bonbons d'Imao ou par ses prestataires.
+ 
+           <br><br><strong> 2.     Les cookies « Analytiques et de Personnalisation »</strong><br>
+Ces cookies ne sont pas indispensables à la navigation sur notre site  mais peuvent permettre, par exemple, pour vous : de faciliter vos recherches, d’optimiser votre expérience d’achat, et pour nous : de mieux cibler vos attentes, d’améliorer notre offre, ou encore d’optimiser le fonctionnement de notre site.
+
+            <br><br><strong>3.     Les cookies « Publicitaires »</strong><br>
+Des cookies sont également susceptibles d'être utilisés dans les espaces publicitaires de notre site. Ces espaces publicitaires vendus à des annonceurs contribuent au financement des contenus et des services que nous mettons à votre disposition.
+
+Quel est l’intérêt de voir s’afficher des offres promotionnelles et des publicités adaptées à votre navigation ?  
+Notre objectif est de vous présenter les offres et les publicités les plus pertinentes possibles. A cette fin, la technologie des cookies permet d’afficher, en temps réel, le contenu le plus adaptée à vos centres d’intérêt déduits de votre navigation récente sur un ou plusieurs sites. 
+Votre intérêt pour les contenus qui sont affichés sur votre terminal, lorsque vous consultez un site, détermine souvent les ressources publicitaires de ce site lui permettent d'exploiter ses services, souvent fournis gratuitement aux utilisateurs. Vous préférez sans doute voir s'afficher des offres et publicités qui vous intéressent plutôt que des contenus qui n'ont aucun intérêt pour vous. De même, Les Bonbons d'Imao comme les annonceurs, souhaitent voir leurs offres et publicités diffusées, auprès d'internautes susceptibles d'être intéressés par celles-ci. 
+
+
+Attention, si vous partagez l’utilisation de votre terminal avec d’autres personnes :
+
+Si votre terminal est utilisé par plusieurs personnes et lorsqu’un même terminal dispose de plusieurs logiciels de navigation, nous ne pouvons pas nous assurer de manière certaine que les services et publicités destinés à votre terminal correspondent bien à votre propre utilisation de celui-ci et non à celle d'un autre utilisateur de ce terminal. 
+
+Le cas échéant, le partage avec d’autres personnes de l’utilisation de votre terminal et la configuration des paramètres de votre navigateur à l'égard des cookies, relèvent de votre libre choix et de votre responsabilité.
+
+Les Bonbons d'Imao exerce également une activité de régie publicitaire. Dans le cadre de cette activité, elle est chargée par des annonceurs de diffuser leurs publicités dans des espaces publicitaires de notre site mais également d’autres sites éditeurs.
+
+Ces contenus publicitaires (graphismes, animations, vidéos, etc.) sont susceptibles de contenir des cookies émis par Les Bonbons d'Imao, par ses prestataires ou par des tiers (pour ces derniers voir le point II ci-dessous) qui ont associé un cookie au contenu publicitaire d'un annonceur.
+
+
+
+   <br> <br><strong>II.     Les cookies émis par des sociétés tierces </strong><br>
+L'émission et l'utilisation de cookies par des tiers sur notre site, sont soumises aux politiques de protection de la vie privée de ces tiers.
+
+Ces cookies ne sont pas indispensables à la navigation sur notre site.
+
+           <br><br><strong> 1.     Les cookies émis par des applications tierces intégrées à notre site</strong><br>
+
+Nous sommes susceptibles d'inclure sur notre site, des applications informatiques émanant de tiers, qui vous permettent de partager des contenus de notre site avec d'autres personnes ou de faire connaître à ces autres personnes votre consultation ou votre opinion concernant un contenu de notre site. Tel est notamment le cas des boutons "Partager", "J'aime", issus de réseaux sociaux tels que Facebook, "Twitter", Google+, etc. 
+
+Le réseau social fournissant un tel bouton applicatif est susceptible de vous identifier grâce à ce bouton, même si vous n'avez pas utilisés ce bouton lors de votre consultation de notre site.
+
+En effet, ce type de bouton applicatif peut permettre au réseau social concerné de suivre votre navigation sur notre site, du seul fait que votre compte au réseau social concerné était activé sur votre terminal (session ouverte) durant votre navigation sur notre site. 
+
+Nous n'avons aucun contrôle sur le processus employé par les réseaux sociaux pour collecter des informations relatives à votre navigation sur notre site et associées aux données personnelles dont ils disposent.
+
+Nous vous invitons à consulter les politiques de protection de la vie privée de ces réseaux sociaux afin de prendre connaissance des finalités d'utilisation, notamment publicitaires, des informations de navigation qu'ils peuvent recueillir grâce à ces boutons applicatifs. Ces politiques de protection doivent notamment vous permettre d'exercer vos choix auprès de ces réseaux sociaux, notamment en paramétrant vos comptes d'utilisation de chacun de ces réseaux.
+Pour connaitre la politique de protection de vie privée des réseaux sociaux précités cliquez sur le nom du réseau social de votre choix :
+Facebook 
+Twitter
+Google +
+ 
+
+
+           <br><br><strong> 2.     Les cookies émis par des contenus de tiers diffusés dans nos espaces publicitaires </strong><br>
+Dans le cadre de notre activité de régie publicitaire, les contenus publicitaires (graphismes, animations, vidéos, etc) diffusés dans nos espaces publicitaires sont susceptibles de contenir des Cookies émis par des tiers : soit l'annonceur à l'origine du contenu publicitaire concerné, soit une société tierce à l'annonceur (agence conseil en communication, société de mesure d'audience, prestataire de publicité ciblée, etc.), qui a associé un cookie au contenu publicitaire d'un annonceur.
+ 
+Le cas échéant, les cookies émis par ces tiers peuvent leur permettre, pendant la durée de validité de ces cookies : 
+
+de diffuser de la publicité dans tous les emplacements réservés à la publicité de tiers ;
+ 
+ de comptabiliser le nombre d'affichages des contenus publicitaires diffusés via nos espaces publicitaires, d'identifier les publicités ainsi affichées, le nombre d'utilisateurs ayant cliqué sur chaque publicité, leur permettant de calculer les sommes dues de ce fait et d'établir des statistiques;
+ 
+de reconnaître votre terminal lors de sa navigation ultérieure sur tout autre site ou service sur lequel ces annonceurs ou ces tiers émettent également des cookies et, le cas échéant, d'adapter ces sites et services tiers ou les publicités qu'ils diffusent, à la navigation de votre terminal dont ils peuvent avoir connaissance
+
+
+    <br><br><strong>III.    Gérer les cookies déposés sur votre terminal</strong><br>
+L’enregistrement d’un cookie dans votre terminal est subordonné à votre volonté.
+
+Grâce à l’outil Ghostery disponible sur notre site internet ou aux paramétrages de votre  logiciel de navigation, vous pouvez, à tout moment, simplement et gratuitement, choisir  d’accepter ou non l’enregistrement de cookies sur votre terminal.
+
+        <br><br><strong>    1.     Les choix qui vous sont offerts grâce à l’outil Ghostery</strong><br>
+Avec l’outil Ghostery, vous pouvez choisir les cookies pouvant être déposés sur votre site internet, à l’exception des cookies essentiels, strictement nécessaires à la navigation et à la passation de commandes sur le site www.lesbonbonsdimao.com ainsi qu’au pilotage de l’activité de Les Bonbons d'Imao.
+Le paramétrage sur une plateforme de gestion des cookies
+
+Si vous ne souhaitez pas que Les Bonbons d'Imao puisse déposer tout ou partie des Cookies, vous pouvez nous faire part de vos choix en cliquant sur le bouton ci-dessous.
+Gérer mes cookies
+
+
+
+ 
+          <br><br><strong>  2.    Les choix qui vous sont offerts par votre logiciel de navigation (Internet Explorer, Firefox, Google Chrome, etc.). </strong><br>
+
+Vous pouvez configurer votre logiciel de navigation selon votre volonté, de manière à ce que des cookies soient (a) acceptés et enregistrés  dans votre terminal ou, au contraire, (b) afin qu'ils soient refusés. 
+
+
+             <br><br><strong>   a.     L’accord sur les Cookies </strong><br> 
+
+Si votre logiciel de navigation est paramétré de manière à accepter l’enregistrement de cookies dans votre terminal, les cookies intégrés dans les pages et contenus que vous avez consultés seront systématiquement enregistrés dans votre terminal. 
+
+<br><br><strong>    b.      Le refus des Cookies </strong><br>
+Vous pouvez paramétrer votre logiciel de navigation de manière :
+à ce que l’acceptation ou le refus des cookies vous soient proposés ponctuellement, avant qu’un cookie soit susceptible d’être enregistré ;
+à refuser systématiquement l’enregistrement de cookies dans votre terminal.  
+
+Attention : Tout paramétrage que vous pouvez entreprendre sur votre logiciel de navigation concernant l’acceptation ou le refus des cookies sera susceptible de modifier votre navigation sur Internet et vos conditions d'accès à certains services nécessitant l'utilisation de ces mêmes cookies.  
+
+Par exemple, en refusant certains cookies essentiels vous risquez de ne plus pouvoir passer commande sur notre site. 
+
+Si vous choisissez de refuser l’enregistrement de cookies dans votre terminal ou si vous supprimez ceux qui y sont enregistrés,  nous déclinons toute responsabilité pour les conséquences liées au fonctionnement dégradé de nos services résultant de l'impossibilité pour nous d'enregistrer ou de consulter les cookies nécessaires à leur fonctionnement et que vous auriez refusés ou supprimés. 
+ Comment exercer vos choix, selon le navigateur que vous utilisez ? 
+
+La configuration de chaque logiciel de navigation est différente. Elle est généralement décrite dans le menu d'aide de votre logiciel de navigation. Nous vous invitons donc à en prendre connaissance. Vous pourrez ainsi savoir de quelle manière modifier vos souhaits en matière de cookies. 
+<br><p>Pour Internet Explorer™ : <a href="http://windows.microsoft.com/fr-FR/windows-vista/Block-or-allow-cookies">http://windows.microsoft.com/fr-FR/windows-vista/Block-or-allow-cookies</a> </p>
+<p>Pour Safari™ : <a href="https://support.apple.com/kb/PH19214?locale=fr_FR&viewlocale=fr_FR">https://support.apple.com/kb/PH19214?locale=fr_FR&viewlocale=fr_FR</a> </p>
+<p>Pour Chrome™ : <a href="http://support.google.com/chrome/bin/answer.py?hl=fr&hlrm=en&answer=95647">http://support.google.com/chrome/bin/answer.py?hl=fr&hlrm=en&answer=95647</a> </p>
+ <p>Pour Firefox™ : <a href="http://support.mozilla.org/fr/kb/Activer%20et%20d%C3%A9sactiver%20les%20cookies">http://support.mozilla.org/fr/kb/Activer%20et%20d%C3%A9sactiver%20les%20cookies </a> </p>
+<p>Pour Opera™ : <a href="http://help.opera.com/Windows/10.20/fr/cookies.html">http://help.opera.com/Windows/10.20/fr/cookies.html </a> </p>
+            </div> 
+       </div> 
+    </div>   
+ </div>
+{% endblock %}				
+                            
+
+
+
